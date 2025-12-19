@@ -1,65 +1,50 @@
-📸 MyPhotos App
+##📸 MyPhotos App
 
 MyPhotos es una aplicación Android desarrollada con Jetpack Compose que consume una API remota alojada en GitHub para mostrar una galería de imágenes con descripciones en Markdown, e incorpora Room para persistencia local y uso offline.
 
-✨ Características
+##✨ Características
 
-📡 Consumo de API remota (JSON desde GitHub)
+-📡 Consumo de API remota (JSON desde GitHub)
 
-🖼️ Carga de imágenes con Coil
+-🖼️ Carga de imágenes con Coil
 
-📝 Renderizado de descripciones en Markdown
+-📝 Renderizado de descripciones en Markdown
 
-💾 Persistencia local con Room
+-💾 Persistencia local con Room
 
-🔌 Soporte offline
+-🔌 Soporte offline
 
-🧭 Navegación con Navigation Compose
+-🧭 Navegación con Navigation Compose
 
-🧱 Arquitectura limpia (Repository pattern)
+-🧱 Arquitectura limpia (Repository pattern)
 
-💉 Inyección de dependencias con Hilt
+-💉 Inyección de dependencias con Hilt
 
-🎨 UI moderna con Jetpack Compose
+-🎨 UI moderna con Jetpack Compose
 
-🧱 Arquitectura
+-🧱 Arquitectura
 
-El proyecto sigue una arquitectura basada en capas:
+#🛠️ Tecnologías y librerías
 
-UI (Compose)
-│
-├── ViewModel
-│
-├── Repository
-│   ├── RemoteDataSource (API)
-│   └── LocalDataSource (Room)
-│
-└── Data
-    ├── DTO
-    ├── Entity
-    └── Domain Model
+- Kotlin
 
-🛠️ Tecnologías y librerías
+- Jetpack Compose
 
-Kotlin
+- Navigation Compose
 
-Jetpack Compose
+- Coil 3
 
-Navigation Compose
+- Retrofit
 
-Coil 3
+- Room
 
-Retrofit
+- Hilt
 
-Room
+- KSP
 
-Hilt
+- Markdown Renderer
 
-KSP
-
-Markdown Renderer
-
-📦 Versionado
+#📦 Versionado
 
 El proyecto utiliza Git tags para manejar versiones.
 
@@ -76,7 +61,7 @@ o volver a la versión más reciente:
 
 git checkout main
 
-📁 Fuente de datos
+#📁 Fuente de datos
 
 La app consume un JSON alojado en GitHub que contiene:
 
@@ -97,7 +82,7 @@ URL con descripción en Markdown
   }
 ]
 
-📴 Modo Offline
+#📴 Modo Offline
 
 Al primer uso con internet, los datos se guardan en Room
 
@@ -105,7 +90,7 @@ Si no hay conexión, la app carga la información desde la base de datos local
 
 Se utiliza fallbackToDestructiveMigration() para manejar cambios de esquema durante el desarrollo
 
-🚀 Cómo ejecutar el proyecto
+#🚀 Cómo ejecutar el proyecto
 
 Clona el repositorio:
 
@@ -115,20 +100,6 @@ git clone https://github.com/tu-usuario/MyPhotos.git
 Abre el proyecto en Android Studio
 
 Ejecuta el proyecto en un emulador o dispositivo físico
-
-📌 Pendientes / Mejoras futuras
-
-Animaciones de navegación
-
-Pull to refresh
-
-Manejo de errores UI
-
-Paging
-
-Tests unitarios
-
-Cache inteligente (TTL)
 
 👨‍💻 Autor
 
