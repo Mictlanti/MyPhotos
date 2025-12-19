@@ -11,6 +11,7 @@ composeBom = "2024.09.00"
 navigationCompose = "2.8.5"
 materialIconsExtended = "1.6.2"
 hiltAndroid = "2.57"
+room = "2.8.3"
 ksp = "2.0.20-1.0.25"
 retrofit = "3.0.0"
 playServicesLocation = "21.3.0"
@@ -42,6 +43,10 @@ androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-
 #Dagger - Hilt
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltAndroid" }
+#Room
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 #Retrofit
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
@@ -64,3 +69,5 @@ kotlinx-serilization = { id = "org.jetbrains.kotlin.plugin.serialization", versi
 #hilt
 dagger = { id = "com.google.dagger.hilt.android", version.ref = "hiltAndroid" }
 ksp = { id ="com.google.devtools.ksp", version.ref = "ksp" }
+#room
+room = { id = "androidx.room", version.ref = "room" }

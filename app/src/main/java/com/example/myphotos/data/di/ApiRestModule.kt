@@ -1,5 +1,6 @@
 package com.example.myphotos.data.di
 
+import com.example.myphotos.data.remote.LocalDataSources
 import com.example.myphotos.data.remote.RemoteDataSources
 import com.example.myphotos.data.remote.api.ApiService
 import com.example.myphotos.data.repositoryImpl.ImageRepoImpl
@@ -16,7 +17,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class ImageModule {
+class ApiRestModule {
 
     private val BASE_URL = "https://raw.githubusercontent.com/"
 
@@ -45,8 +46,11 @@ class ImageModule {
 
     @Provides
     @Singleton
-    fun providesImageRepo(remoteDataSources: RemoteDataSources) : ImageRepository {
-        return ImageRepoImpl(remoteDataSources)
+    fun providesImageRepo(
+        remoteDataSources: RemoteDataSources,
+        localDataSources: LocalDataSources
+    ) : ImageRepository {
+        return ImageRepoImpl(remoteDataSources, localDataSources)
     }
 
 }

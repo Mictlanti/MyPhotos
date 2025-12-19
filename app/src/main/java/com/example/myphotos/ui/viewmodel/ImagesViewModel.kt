@@ -2,10 +2,12 @@ package com.example.myphotos.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.myphotos.data.mappers.toImageDomainEntity
 import com.example.myphotos.domain.repository.ImageRepository
 import com.example.myphotos.domain.state.ImageState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import jakarta.inject.Inject
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -25,10 +27,10 @@ class ImagesViewModel @Inject constructor(
     }
 
     private fun loadImages() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             _state.update { state ->
                 state.copy(
-                    listImages = imageRepository.getImages()
+                    listImages = imageRepository.getImages().toImageDomainEntity()
                 )
             }
         }

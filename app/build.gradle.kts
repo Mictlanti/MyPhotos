@@ -75,7 +75,11 @@ dependencies {
     implementation(libs.hilt.android)
     //implementation("androidx.hilt:hilt-work:1.2.0")
     kapt(libs.hilt.compiler)
-    //kapt("androidx.hilt:hilt-compiler:1.3.0")
+
+    //Room
+    implementation(libs.room.ktx)
+    implementation(libs.room.runtime)
+    ksp(libs.room.compiler)
 
     //Retrofit
     implementation(libs.retrofit)

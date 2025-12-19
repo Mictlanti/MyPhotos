@@ -1,11 +1,11 @@
 package com.example.myphotos.domain.repository
 
-import com.example.myphotos.domain.model.ImageModel
+import com.example.myphotos.data.local.entity.ImageEntity
 
 interface ImageRepository {
 
-    suspend fun getImages() : List<ImageModel>
+    suspend fun getImages() : List<ImageEntity>
 
-    suspend fun getImageById(id: Int) : ImageModel?
+    suspend fun getImageById(id: Int) : ImageEntity
 
 }
