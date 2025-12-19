@@ -1,8 +1,8 @@
-##📸 MyPhotos App
+📸 ##MyPhotos App
 
 MyPhotos es una aplicación Android desarrollada con Jetpack Compose que consume una API remota alojada en GitHub para mostrar una galería de imágenes con descripciones en Markdown, e incorpora Room para persistencia local y uso offline.
 
-##✨ Características
+✨ ##Características
 
 -📡 Consumo de API remota (JSON desde GitHub)
 
@@ -24,7 +24,7 @@ MyPhotos es una aplicación Android desarrollada con Jetpack Compose que consume
 
 -🧱 Arquitectura
 
-#🛠️ Tecnologías y librerías
+🛠️ # Tecnologías y librerías
 
 - Kotlin
 
