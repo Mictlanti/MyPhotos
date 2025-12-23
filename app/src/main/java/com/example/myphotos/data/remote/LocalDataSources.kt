@@ -8,10 +8,20 @@ class LocalDataSources @Inject constructor(
     private val imageDao: ImageDao
 ) {
 
-    suspend fun insertImage(images: List<ImageEntity>) = imageDao.insertImage(images)
+    suspend fun insertImageFromRemote(images: List<ImageEntity>) = imageDao.insertImageFromRemote(images)
 
-    fun getAllImages() : List<ImageEntity> = imageDao.getImages()
+    suspend fun insertUserImage(image: ImageEntity) = imageDao.insertUserImage(image)
 
-    fun getImageById(id: Int) : ImageEntity = imageDao.getImageById(id)
+    suspend fun getAllImages() : List<ImageEntity> = imageDao.getImages()
+
+    suspend fun getImageById(id: Long) : ImageEntity? = imageDao.getImageById(id)
+
+    suspend fun getImagesPending() : List<ImageEntity> = imageDao.getImagesPending()
+
+    suspend fun updateImage(image: ImageEntity) = imageDao.updateImages(image)
+
+    fun updateSyncState(id: Long, remoteId: Int?) = imageDao.updateSyncState(id, remoteId)
+
+    fun deleteRemote(localId: Long) = imageDao.delete(localId)
 
 }

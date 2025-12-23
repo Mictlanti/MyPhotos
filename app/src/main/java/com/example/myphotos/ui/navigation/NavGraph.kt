@@ -9,6 +9,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
+import com.example.myphotos.ui.view.AddImageScreenRoute
 import com.example.myphotos.ui.view.HomeScreenRoute
 import com.example.myphotos.ui.view.ImageScreenRoute
 import com.example.myphotos.ui.viewmodel.ImagesViewModel
@@ -31,7 +32,8 @@ fun NavGraph(viewModel: ImagesViewModel) {
         ) {
             HomeScreenRoute(
                 viewModel,
-                onNavImage = { id -> navController.navigate(Routes.ImageView(id)) }
+                onNavImage = { id -> navController.navigate(Routes.ImageView(id)) },
+                navAddImageView = { navController.navigate(Routes.AddImage) }
             )
         }
         composable<Routes.ImageView>(
@@ -56,6 +58,9 @@ fun NavGraph(viewModel: ImagesViewModel) {
                 id = args.id,
                 onNavBack = { navController.popBackStack() }
             )
+        }
+        composable<Routes.AddImage> {
+            AddImageScreenRoute(viewModel) { navController.popBackStack() }
         }
     }
 
